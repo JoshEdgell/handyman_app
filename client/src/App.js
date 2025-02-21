@@ -1,40 +1,33 @@
 import React, { Component } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Window from './components/Window';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        isFrameOne: true, // Initial state
+    };
+}
+
+toggleFrame = () => {
+  console.log('trying to toggle');
+    this.setState((prevState) => ({
+        isFrameOne: !prevState.isFrameOne, // Toggle state
+    }));
+};
+
 
   render(){
     return(
       <div>
         poop
-        <Window/>
+        <Window toggleFrame={this.toggleFrame} isFrameOne={this.state.isFrameOne}/>
       </div>
     )
   }
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       Poop
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
