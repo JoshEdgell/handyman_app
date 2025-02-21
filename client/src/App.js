@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Headbar from './components/Headbar';
 import Window from './components/Window';
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
   render(){
     return(
       <div>
-        <Headbar/>
+        poop
         <Window/>
       </div>
     )
